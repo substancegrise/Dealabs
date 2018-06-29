@@ -10,23 +10,26 @@ Création d'une application de scriping avec **Cheerio"** , **request-promise** 
 
 Maodule npm:
 
-> npm install --save request
-> npm install --save request-promise
-> request is defined as a peer-dependency and thus has to be installed separately.
-
+```bash
+> - npm install --save request
+> - npm install --save request-promise
+> - request is defined as a peer-dependency and thus has to be installed separately.
+```
 
 
 
 ## cheerio
 
-> const cheerio = require('cheerio')
-> const $ = cheerio.load('..')
+```bash
+> - const cheerio = require('cheerio')
+> - const $ = cheerio.load('..')
 
-> $('h2.title').text('Hello there!')
-> $('h2').addClass('welcome')
+> - $('h2.title').text('Hello there!')
+> - $('h2').addClass('welcome')
+```
 
-$.html()
-//=> <h2 class="title welcome">Hello there!</h2>
+- $.html()
+- //=> <h2 class="title welcome">Hello there!</h2>
 
 
 **Installation**
