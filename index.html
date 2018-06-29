@@ -55,82 +55,9 @@
         <small>Mise en avant des produits</small>
       </h1>
 
-      <div class="row">
-        <div id="content" class="col-lg-4 col-sm-6 portfolio-item">
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Produit One</a>
-                <p> 30 €</p>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
-              <button type="button" class="btn btn-primary">Lien</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Produit Two</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              <button type="button" class="btn btn-primary">Lien</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Produit Three</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-              <button type="button" class="btn btn-primary">Lien</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Produit Four</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              <button type="button" class="btn btn-primary">Lien</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Produit Five</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              <button type="button" class="btn btn-primary">Lien</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Produit Six</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-              <button type="button" class="btn btn-primary">Lien</button>
-            </div>
-          </div>
-        </div>
+      <div class="row" id="content">
+      
+        
       </div>
       <!-- /.row -->
 
@@ -200,15 +127,26 @@
             dealList[index]['img'] = $(this).find('img').attr('src');
             dealList[index]['url'] = $(this).find('.thread-title--list').attr('href');
             
-      dealabs ="<div class=\"card h-100\"> <a href="+dealList[index].url+"> <img class=\"card-img-top\" src="+dealList[index].img+" alt=\"> </a> <div class=\"card-body\"> <h4 class=\"card-title\"> <a href="+dealList.url+">"+dealList.name+"</a><p> "+dealList.price+" €</p> </h4><p class=\"card-text\">"+dealList.description+"</p><button type=\"button\" class=\"btn btn-primary\">Lien</button></div></div>";
-          
+      
 
-
-              document.getElementById("content").innerHTML = dealabs;
+             
             });
 
-          console.log(dealList);
+          var i = 0;
+
+          for(i = 0; i < dealList.length; i++){
+
+           var dealabs ="<div  class=\"col-lg-4 col-sm-6 portfolio-item\"><div class=\"card h-100\"> <a href="+dealList[i].url+"> <img class=\"card-img-top\" src="+dealList[i].img+" alt=\"\"> </a> <div class=\"card-body\"> <h4 class=\"card-title\"> <a href="+dealList.url+">"+dealList[i].name+"</a><p> "+dealList[i].price+" €</p> </h4><p class=\"card-text\">"+dealList[i].description+"</p><button type=\"button\" class=\"btn btn-primary\">Lien</button></div></div></div>";
+
+
+              document.getElementById("content").innerHTML += dealabs;
+         };
+
+          console.log(dealList[0].name);
         })
+
+
+
         .catch((err) => {
           console.log(err);
         });
